@@ -1,6 +1,6 @@
 {
   "name": "Agent DVR",
-  "version": "1.6",
+  "version": "1.7",
   "url": "https://github.com/kdosiodjinud/homeassistant-agent-dvr/homeassistant-agent-dvr",
   "init": false,
   "slug": "agent_dvr",
