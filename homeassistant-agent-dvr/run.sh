@@ -2,5 +2,7 @@
 echo "STARTED"
 
 while true;do
-  sleep 5
+
+    echo "run";
+
 done
