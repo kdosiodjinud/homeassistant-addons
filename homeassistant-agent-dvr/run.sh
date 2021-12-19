@@ -1,4 +1,5 @@
-#!/usr/bin/env bash
+#!/bin/bash
+
 echo "STARTED"
 
 while true;do
