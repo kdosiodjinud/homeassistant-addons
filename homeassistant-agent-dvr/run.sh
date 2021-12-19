@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 echo "STARTED"
 
 while true;do
 
-    echo "run";
+  echo "run"
 
 done
