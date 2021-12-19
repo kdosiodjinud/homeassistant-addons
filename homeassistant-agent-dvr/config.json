@@ -1,0 +1,28 @@
+{
+  "name": "Agent DVR",
+  "version": "1.0",
+  "url": "https://github.com/kdosiodjinud/homeassistant-agent-dvr/homeassistant-agent-dvr",
+  "init": false,
+  "slug": "agent_dvr",
+  "description": "Agent DVR integration.",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "startup": "before",
+  "boot": "auto",
+  "ports": {
+    "8090/tcp": 8090,
+    "3478/udp": 3478,
+    "50000/udp": 50000,
+    "50001/udp": 50001,
+    "50002/udp": 50002,
+    "50003/udp": 50003,
+    "50004/udp": 50004,
+    "50005/udp": 50005,
+    "50006/udp": 50006,
+    "50007/udp": 50007,
+    "50008/udp": 50008,
+    "50009/udp": 50009,
+    "50010/udp": 50010
+  },
+  "options": {},
+  "schema": {}
+}

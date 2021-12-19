@@ -1,0 +1,3 @@
+build_from:
+  armhf: doitandbedone/ispyagentdvr:latest
+squash: false
