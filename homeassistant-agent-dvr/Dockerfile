@@ -1,8 +1,6 @@
 ARG BUILD_FROM
 FROM ${BUILD_FROM}
 
-#FROM doitandbedone/ispyagentdvr:latest
-
 ARG BUILD_ARCH
 ARG BUILD_DATE
 ARG BUILD_REF
@@ -18,7 +16,7 @@ LABEL \
     org.label-schema.description="Agent DVR integration" \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="homeassistant-agent-dvr" \
-    org.label-schema.schema-version="1.7" \
+    org.label-schema.schema-version="1.8" \
     org.label-schema.url="https://github.com/kdosiodjinud/homeassistant-agent-dvr/homeassistant-agent-dvr" \
     org.label-schema.usage="https://github.com/kdosiodjinud/homeassistant-agent-dvr/homeassistant-agent-dvr/README.md" \
     org.label-schema.vcs-ref=${BUILD_REF} \
@@ -27,13 +25,7 @@ LABEL \
 
 ENV LANG C.UTF-8
 
-RUN apk update && \
-    apk add -y --no-cache mosquitto-clients jq
-
 WORKDIR /data
 
-COPY run.sh /
-
-RUN chmod a+x /run.sh
-
-CMD [ "/run.sh" ]
+RUN mkdir commands
+RUN mkdir media
