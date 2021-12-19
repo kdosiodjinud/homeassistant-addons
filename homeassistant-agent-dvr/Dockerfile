@@ -1,5 +1,6 @@
-ARG BUILD_FROM
-FROM ${BUILD_FROM}
+FROM ghcr.io/hassio-addons/debian-base/amd64:5.2.2
+#ARG BUILD_FROM
+#FROM ${BUILD_FROM}
 
 ARG BUILD_ARCH
 ARG BUILD_DATE
@@ -16,7 +17,7 @@ LABEL \
     org.label-schema.description="Agent DVR integration" \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="homeassistant-agent-dvr" \
-    org.label-schema.schema-version="2.1" \
+    org.label-schema.schema-version="2.2" \
     org.label-schema.url="https://github.com/kdosiodjinud/homeassistant-agent-dvr/homeassistant-agent-dvr" \
     org.label-schema.usage="https://github.com/kdosiodjinud/homeassistant-agent-dvr/homeassistant-agent-dvr/README.md" \
     org.label-schema.vcs-ref=${BUILD_REF} \
