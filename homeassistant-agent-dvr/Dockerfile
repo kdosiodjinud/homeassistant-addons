@@ -28,12 +28,7 @@ ENV LANG C.UTF-8
 
 WORKDIR /data
 
-COPY install.sh /
 COPY run.sh /
-
-RUN chmod a+x /install.sh
-
-#RUN install.sh
 
 RUN chmod a+x /run.sh
 
