@@ -1,11 +1,11 @@
 {
   "name": "Agent DVR",
-  "version": "2.4",
+  "version": "2.5",
   "url": "https://github.com/kdosiodjinud/homeassistant-agent-dvr/homeassistant-agent-dvr",
   "init": false,
   "slug": "agent_dvr",
   "description": "Agent DVR integration.",
-  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386", "armv7"],
+  "arch": ["armv7"],
   "startup": "before",
   "boot": "auto",
   "ports": {

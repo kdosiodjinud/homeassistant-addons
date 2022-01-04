@@ -1,78 +1,77 @@
 #!/bin/sh
 
-# Install script for AgentDVR/Linux
+echo "installing build tools" && \
+	apt-get update && \
+	apt-get install -y unzip python3 curl make g++ build-essential libvlc-dev vlc libx11-dev ffmpeg build-essential cmake git unzip pkg-config gfortran libjpeg-dev libtiff-dev libpng-dev libavcodec-dev libavformat-dev libswscale-dev libgtk2.0-dev libcanberra-gtk* libgtk-3-dev libgstreamer1.0-dev gstreamer1.0-gtk3 libgstreamer-plugins-base1.0-dev gstreamer1.0-gl libxvidcore-dev libx264-dev python-dev python-numpy python3-pip python3-dev python3-numpy libtbb2 libtbb-dev libdc1394-22-dev libv4l-dev v4l-utils libopenblas-dev libatlas-base-dev libblas-dev liblapack-dev gfortran libhdf5-dev libprotobuf-dev libgoogle-glog-dev libgflags-dev protobuf-compiler && \
 
-echo "installing build tools"
-  apk update && apk add unzip python3 curl make g++ libvlc-dev build-essential vlc libx11-dev
+echo "Instal OpenCV"
+  cd ~
+  wget -O opencv.zip https://github.com/opencv/opencv/archive/4.5.4.zip
+  wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.5.4.zip
+  unzip opencv.zip
+  unzip opencv_contrib.zip
+  mv opencv-4.5.4 opencv
+  mv opencv_contrib-4.5.4 opencv_contrib
+  rm opencv.zip
+  rm opencv_contrib.zip
+  cd ~/opencv
+  mkdir build
+  cd build
+  cmake -D CMAKE_BUILD_TYPE=RELEASE \
+  -D CMAKE_INSTALL_PREFIX=/usr/local \
+  -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \
+  -D ENABLE_NEON=ON \
+  -D ENABLE_VFPV3=ON \
+  -D WITH_OPENMP=ON \
+  -D WITH_OPENCL=OFF \
+  -D BUILD_ZLIB=ON \
+  -D BUILD_TIFF=ON \
+  -D WITH_FFMPEG=ON \
+  -D WITH_TBB=ON \
+  -D BUILD_TBB=ON \
+  -D BUILD_TESTS=OFF \
+  -D WITH_EIGEN=OFF \
+  -D WITH_GSTREAMER=ON \
+  -D WITH_V4L=ON \
+  -D WITH_LIBV4L=ON \
+  -D WITH_VTK=OFF \
+  -D WITH_QT=OFF \
+  -D OPENCV_ENABLE_NONFREE=ON \
+  -D INSTALL_C_EXAMPLES=OFF \
+  -D INSTALL_PYTHON_EXAMPLES=OFF \
+  -D BUILD_opencv_python3=TRUE \
+  -D OPENCV_GENERATE_PKGCONFIG=ON \
+  -D BUILD_EXAMPLES=OFF ..
+  make -j4
+  make install
+  ldconfig
+  make clean
+  echo "Congratulations!"
+  echo "You've successfully installed OpenCV"
 
+echo "Instal AgentDVR"
+  cd ~
+  mkdir AgentDVR
+  cd AgentDVR
+	curl --show-error --location "https://ispyfiles.azureedge.net/downloads/Agent_ARM32_3_7_6_0.zip" -o "AgentDVR.zip" && \
+	unzip AgentDVR.zip && \
+	rm AgentDVR.zip
 
-FILE=$ABSOLUTE_PATH/start_agent.sh
-if [ ! -f $FILE ]
-then
-	echo "downloading start script"
-	curl --show-error --location "https://raw.githubusercontent.com/ispysoftware/agent-install-scripts/main/start_agent.sh" -o "start_agent.sh"
-	chmod a+x ./start_agent.sh
-fi
+echo "Instal Dotnet"
+  ABSOLUTE_PATH=~
+  cd ~
+	echo -n "Install dotnet 3.1.300 for Agent"
+  curl -s -L "https://dot.net/v1/dotnet-install.sh" | bash -s -- --version "3.1.300" --install-dir "$ABSOLUTE_PATH/AgentDVR/.dotnet"
 
-mkdir AgentDVR
-cd AgentDVR
-
-FILE=$ABSOLUTE_PATH/AgentDVR/Agent.dll
-if [ ! -f $FILE ]
-then
-	echo "finding installer for $(arch)"
-	purl="https://www.ispyconnect.com/api/Agent/DownloadLocation2?productID=24&is64=true&platform=Linux"
-	case $(arch) in
-		'aarch64' | 'arm64')
-			purl="https://www.ispyconnect.com/api/Agent/DownloadLocation2?productID=24&is64=true&platform=ARM"
-		;;
-		'arm' | 'armv6l' | 'armv7l')
-			purl="https://www.ispyconnect.com/api/Agent/DownloadLocation2?productID=24&is64=false&platform=ARM32"
-		;;
-	esac
-
-	AGENTURL=$(curl -s --fail "$purl" | tr -d '"')
-	echo "Downloading $AGENTURL"
-	curl --show-error --location "$AGENTURL" -o "AgentDVR.zip"
-	unzip AgentDVR.zip
-else
-	echo "Found Agent in $ABSOLUTE_PATH/AgentDVR - delete it to reinstall"
-fi
-
-#if [ ! -d $ABSOLUTE_PATH/AgentDVR/.dotnet ]
-#then
-#	echo -n "Install dotnetfor Agent (y/n)? "
-#	curl -s -L "https://dot.net/v1/dotnet-install.sh" | bash -s -- --version "3.1.300" --install-dir "$ABSOLUTE_PATH/AgentDVR/.dotnet"
-#else
-#	echo "Found dotnet in $ABSOLUTE_PATH/AgentDVR/.dotnet - delete it to reinstall"
-#fi
-
-apk add ffmpeg
-
-cd $ABSOLUTE_PATH
-
-FILE=/etc/systemd/system/AgentDVR.service
-if [ ! -f $FILE ]
-then
-	echo -n "Install AgentDVR as system service"
-  echo Yes
-  read -p "Enter your username [$(whoami)]: " name
-  name=${name:-$(whoami)}
+echo "Set AgentDVR as service"
+  cd ~
   curl --show-error --location "https://raw.githubusercontent.com/ispysoftware/agent-install-scripts/main/AgentDVR.service" -o "AgentDVR.service"
   sed -i "s|AGENT_LOCATION|$ABSOLUTE_PATH|" AgentDVR.service
-  sed -i "s|YOUR_USERNAME|$name|" AgentDVR.service
+  sed -i "s|YOUR_USERNAME|root|" AgentDVR.service
   chmod 644 ./AgentDVR.service
-  chown $name -R $ABSOLUTE_PATH/AgentDVR
+  chown root -R $ABSOLUTE_PATH/AgentDVR
   cp AgentDVR.service /etc/systemd/system/AgentDVR.service
   systemctl daemon-reload
   systemctl enable AgentDVR.service
-  systemctl start AgentDVR
-  echo "started service"
-  echo "go to http://localhost:8090 to configure"
-  exit
-else
-	echo "Found service definition in /etc/systemd/system/AgentDVR.service"
-	echo "Go to http://localhost:8090"
-fi
 
 exit

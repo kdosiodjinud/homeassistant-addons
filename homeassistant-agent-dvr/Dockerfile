@@ -1,6 +1,6 @@
 FROM ghcr.io/hassio-addons/debian-base/armv7:5.2.2
-#ARG BUILD_FROM
-#FROM ${BUILD_FROM}
+
+ENV LANG C.UTF-8
 
 ARG BUILD_ARCH
 ARG BUILD_DATE
@@ -17,19 +17,16 @@ LABEL \
     org.label-schema.description="Agent DVR integration" \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="homeassistant-agent-dvr" \
-    org.label-schema.schema-version="2.4" \
+    org.label-schema.schema-version="2.5" \
     org.label-schema.url="https://github.com/kdosiodjinud/homeassistant-agent-dvr/homeassistant-agent-dvr" \
     org.label-schema.usage="https://github.com/kdosiodjinud/homeassistant-agent-dvr/homeassistant-agent-dvr/README.md" \
     org.label-schema.vcs-ref=${BUILD_REF} \
     org.label-schema.vcs-url="https://github.com/kdosiodjinud/homeassistant-agent-dvr" \
     org.label-schema.vendor="Community Hass.io Addons"
 
-ENV LANG C.UTF-8
-
 WORKDIR /data
 
-COPY run.sh /
+COPY install.sh ./install.sh
+RUN chmod a+x ./install.sh && ./install.sh
 
-RUN chmod a+x /run.sh
-
-CMD [ "/run.sh" ]
+CMD [ "systemctl start AgentDVR" ]
