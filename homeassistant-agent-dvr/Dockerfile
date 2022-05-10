@@ -27,6 +27,7 @@ LABEL \
 
 WORKDIR /data
 COPY start_agent.sh ./start_agent.sh
+RUN chmod a+x ./start_agent.sh
 
 #COPY install.sh ./install.sh
 #RUN chmod a+x ./install.sh && ./install.sh
