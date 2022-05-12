@@ -18,16 +18,20 @@ LABEL \
     org.label-schema.description="Agent DVR integration" \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="homeassistant-agent-dvr" \
-    org.label-schema.schema-version="3.6" \
+    org.label-schema.schema-version="3.7" \
     org.label-schema.url="https://github.com/kdosiodjinud/homeassistant-agent-dvr/homeassistant-agent-dvr" \
     org.label-schema.usage="https://github.com/kdosiodjinud/homeassistant-agent-dvr/homeassistant-agent-dvr/README.md" \
     org.label-schema.vcs-ref=${BUILD_REF} \
     org.label-schema.vcs-url="https://github.com/kdosiodjinud/homeassistant-agent-dvr" \
     org.label-schema.vendor="Community Hass.io Addons"
 
-WORKDIR /data
-
 #COPY install.sh ./install.sh
 #RUN chmod a+x ./install.sh && ./install.sh
 
-CMD [ "while true; do echo container is live; sleep 30; done" ]
+WORKDIR /data
+
+COPY run.sh /
+
+RUN chmod a+x /run.sh
+
+CMD [ "/run.sh" ]
