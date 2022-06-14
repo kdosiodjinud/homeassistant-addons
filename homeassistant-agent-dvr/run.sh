@@ -1,6 +1,6 @@
 #!/bin/bash
 
-/root/AgentDVR/.dotnet/dotnet ../Agent.dll
+/root/AgentDVR/.dotnet/dotnet /root/AgentDVR/Agent.dll
 
 for (( ; ; ))
 do
