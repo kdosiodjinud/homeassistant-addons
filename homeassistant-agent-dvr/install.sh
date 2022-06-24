@@ -73,7 +73,7 @@ echo "Link data to persist in hassio"
   mv Commands /data/Commands
   ln -s /data/Commands/
 
-  mv Media /data/Media/
+  mkdir -p /data/Media
   ln -s /data/Media/
 
 exit

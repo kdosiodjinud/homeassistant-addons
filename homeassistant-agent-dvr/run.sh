@@ -4,6 +4,6 @@
 
 for (( ; ; ))
 do
-   echo "Container with Agent DVR run!"
+   echo "Container with Agent DVR!"
    sleep 30
 done

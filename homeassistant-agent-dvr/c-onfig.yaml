@@ -1,0 +1,30 @@
+---
+name: Agent DVR
+version: 4.2
+slug: agent_dvr
+description: AgentDVR server
+url: https://github.com/kdosiodjinud/homeassistant-agent-dvr
+codenotary: kdosiodjinud@gmail.com
+startup: system
+ingress: true
+ingress_port: 8090
+ingress_stream: true
+init: false
+panel_icon: mdi:camera
+panel_title: AgentDVR
+arch:
+  - armv7
+ports:
+  8090/tcp: 8090
+  3478/udp: 3478
+  50000/udp: 50000
+  50001/udp: 50001
+  50002/udp: 50002
+  50003/udp: 50003
+  50004/udp: 50004
+  50005/udp: 50005
+  50006/udp: 50006
+  50007/udp: 50007
+  50008/udp: 50008
+  50009/udp: 50009
+  50010/udp: 50010
