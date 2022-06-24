@@ -25,8 +25,8 @@ LABEL \
     org.label-schema.vcs-url="https://github.com/kdosiodjinud/homeassistant-agent-dvr" \
     org.label-schema.vendor="Community Hass.io Addons"
 
-COPY install.sh ./install.sh
-RUN chmod a+x ./install.sh && ./install.sh
+#COPY install.sh ./install.sh
+#RUN chmod a+x ./install.sh && ./install.sh
 
 WORKDIR /data
 
