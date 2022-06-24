@@ -1,6 +1,6 @@
 ---
 name: Agent DVR
-version: 4.3
+version: 4.4
 slug: agent_dvr
 description: AgentDVR server
 url: https://github.com/kdosiodjinud/homeassistant-agent-dvr
@@ -9,7 +9,7 @@ startup: system
 ingress: true
 ingress_port: 8090
 ingress_stream: true
-init: false
+host_network: true
 panel_icon: mdi:camera
 panel_title: AgentDVR
 arch:
