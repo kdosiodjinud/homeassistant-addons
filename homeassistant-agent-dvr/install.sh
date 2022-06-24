@@ -2,8 +2,7 @@
 
 echo "installing build tools"
 	apt-get update
-	apt-get install -y pip &&
-	apt-get install -y wget systemd unzip python3 curl make g++ build-essential libvlc-dev vlc libx11-dev ffmpeg build-essential cmake git unzip pkg-config gfortran libjpeg-dev libtiff-dev libpng-dev libavcodec-dev libavformat-dev libswscale-dev libgtk2.0-dev libcanberra-gtk* libgtk-3-dev libgstreamer1.0-dev gstreamer1.0-gtk3 libgstreamer-plugins-base1.0-dev gstreamer1.0-gl libxvidcore-dev libx264-dev python-dev python3-pip python3-dev python3-numpy libtbb2 libtbb-dev libdc1394-22-dev libv4l-dev v4l-utils libopenblas-dev libatlas-base-dev libblas-dev liblapack-dev gfortran libhdf5-dev libprotobuf-dev libgoogle-glog-dev libgflags-dev protobuf-compiler
+	apt-get install -y pip wget systemd unzip python3 curl make g++ build-essential libvlc-dev vlc libx11-dev ffmpeg build-essential cmake git unzip pkg-config gfortran libjpeg-dev libtiff-dev libpng-dev libavcodec-dev libavformat-dev libswscale-dev libgtk2.0-dev libcanberra-gtk* libgtk-3-dev libgstreamer1.0-dev gstreamer1.0-gtk3 libgstreamer-plugins-base1.0-dev gstreamer1.0-gl libxvidcore-dev libx264-dev python-dev python3-pip python3-dev python3-numpy libtbb2 libtbb-dev libdc1394-22-dev libv4l-dev v4l-utils libopenblas-dev libatlas-base-dev libblas-dev liblapack-dev gfortran libhdf5-dev libprotobuf-dev libgoogle-glog-dev libgflags-dev protobuf-compiler
 	python3 -m pip install numpy
 
 echo "Install OpenCV"
@@ -65,15 +64,16 @@ echo "Install Dotnet"
 	echo -n "Install dotnet 3.1.300 for Agent"
   curl -s -L "https://dot.net/v1/dotnet-install.sh" | bash -s -- --version "3.1.300" --install-dir "$ABSOLUTE_PATH/AgentDVR/.dotnet"
 
-echo "Set AgentDVR as service"
-  cd ~
-  curl --show-error --location "https://raw.githubusercontent.com/ispysoftware/agent-install-scripts/main/AgentDVR.service" -o "AgentDVR.service"
-  sed -i "s|AGENT_LOCATION|$ABSOLUTE_PATH|" AgentDVR.service
-  sed -i "s|YOUR_USERNAME|root|" AgentDVR.service
-  chmod 644 ./AgentDVR.service
-  chown root -R $ABSOLUTE_PATH/AgentDVR
-  cp AgentDVR.service /etc/systemd/system/AgentDVR.service
-#  systemctl daemon-reload
-#  systemctl enable AgentDVR.service
+echo "Link data to persist in hassio"
+  cd ~/AgentDVR
+
+  mv XML /data/XML
+  ln -s /data/XML/
+
+  mv Commands /data/Commands
+  ln -s /data/Commands/
+
+  mv Media /data/Media/
+  ln -s /data/Media/
 
 exit
