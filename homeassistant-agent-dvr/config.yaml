@@ -1,6 +1,6 @@
 ---
 name: Agent DVR
-version: 4.5
+version: 4.6
 slug: agent_dvr
 description: AgentDVR server
 url: https://github.com/kdosiodjinud/homeassistant-agent-dvr
@@ -12,6 +12,7 @@ ingress_stream: true
 host_network: true
 panel_icon: mdi:camera
 panel_title: Kamery
+panel_admin: false
 arch:
   - armv7
 ports:
