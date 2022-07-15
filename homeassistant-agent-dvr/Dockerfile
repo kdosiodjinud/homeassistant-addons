@@ -1,4 +1,4 @@
-FROM kdosiodjinud/homeassistant-agent-dvr:amd64_1.0.6
+FROM kdosiodjinud/homeassistant-agent-dvr:amd64_1.0.7
 #FROM ghcr.io/hassio-addons/debian-base/amd64:d33377b
 #FROM ghcr.io/hassio-addons/debian-base/armv7:5.2.2
 

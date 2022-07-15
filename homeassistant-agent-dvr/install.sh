@@ -2,8 +2,6 @@
 
 echo "Create user"
  adduser --disabled-password --gecos "" agentdvr
- agentdvr ALL = NOPASSWD : /usr/bin/apt-get , /usr/bin/aptitude , make , ldconfig
- su agentdvr
 
 echo "installing build tools"
 	apt-get update
@@ -11,7 +9,7 @@ echo "installing build tools"
 	python3 -m pip install numpy
 
 echo "Install OpenCV"
-  cd ~
+  cd /home/agentdvr
   wget -O opencv.zip https://github.com/opencv/opencv/archive/4.5.4.zip
   wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.5.4.zip
   unzip opencv.zip
@@ -56,7 +54,7 @@ echo "Install OpenCV"
   echo "You've successfully installed OpenCV"
 
 echo "Install AgentDVR"
-  cd ~
+  cd /home/agentdvr
   mkdir AgentDVR
   cd AgentDVR
 #	curl --show-error --location "https://ispyfiles.azureedge.net/downloads/Agent_ARM32_3_7_6_0.zip" -o "AgentDVR.zip"
@@ -66,12 +64,15 @@ echo "Install AgentDVR"
 
 echo "Install Dotnet"
   ABSOLUTE_PATH=~
-  cd ~
+  cd /home/agentdvr
 	echo -n "Install dotnet 3.1.300 for Agent"
   curl -s -L "https://dot.net/v1/dotnet-install.sh" | bash -s -- --version "3.1.300" --install-dir "$ABSOLUTE_PATH/AgentDVR/.dotnet"
 
 echo "Link data to persist in hassio"
-  cd ~/AgentDVR
+  chmod -R 777 /home/agentdvr
+  chown -R agentdvr:agentdvr /home/agentdvr
+
+  cd /home/agentdvr/AgentDVR
 
   mv XML /data/XML
   ln -s /data/XML/
