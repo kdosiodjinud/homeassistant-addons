@@ -3,35 +3,46 @@
 echo "Link data to persist in hassio"
   cd /home/agentdvr/AgentDVR
 
-  mkdir -p /data/XML
-  mkdir -p /data/XMLTmp
-  mv XML -n /data/XMLTmp
-  rm -rf /home/agentdvr/AgentDVR/XML
-  ln -s /data/XML/
-  mv -n XMLTmp ./XML
+  if [ ! -d "/data/XML" ]
+  then
+    mkdir -p /data/XML
+    mv XML /data/
+    ln -s /data/XML/
 
-  mkdir -p /data/Commands
-  mkdir -p /data/CommandsTmp
-  mv -n Commands /data/CommandsTmp
-  rm -rf /home/agentdvr/AgentDVR/Commands
-  ln -s /data/Commands/
-  mv -n CommandsTmp ./Commands
+    chmod -R 777 /data/XML
+    chown -R agentdvr:agentdvr /data/XML
+  else
+    rm -rf XML
+    ln -s /data/XML/
+  fi
 
-  mkdir -p /data/Media
-  mkdir -p /data/MediaTmp
-  mv -n Media /data/MediaTmp
-  rm -rf /home/agentdvr/AgentDVR/Media
-  ln -s /data/Media/
-  mv -n MediaTmp ./Media
+  if [ ! -d "/data/Commands" ]
+  then
+    mkdir -p /data/Commands
+    mv Commands /data/
+    ln -s /data/Commands/
+
+    chmod -R 777 /data/Commands
+    chown -R agentdvr:agentdvr /data/Commands
+  else
+    rm -rf Commands
+    ln -s /data/Commands/
+  fi
+
+  if [ ! -d "/data/Media" ]
+  then
+    mkdir -p /data/Media
+    mv Media /data/
+    ln -s /data/Media/
+
+    chmod -R 777 /data/Media
+    chown -R agentdvr:agentdvr /data/Media
+  else
+    rm -rf Media
+    ln -s /data/Media/
+  fi
 
   chmod -R 777 /home/agentdvr
-  chmod -R 777 /data/XML
-  chmod -R 777 /data/Commands
-  chmod -R 777 /data/Media
-
   chown -R agentdvr:agentdvr /home/agentdvr
-  chown -R agentdvr:agentdvr /data/XML
-  chown -R agentdvr:agentdvr /data/Commands
-  chown -R agentdvr:agentdvr /data/Media
 
   exit 0;
