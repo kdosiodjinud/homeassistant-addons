@@ -19,7 +19,7 @@ echo "Link data to persist in hassio"
 
   mkdir -p /data/Media
   mkdir -p /data/MediaTmp
-  mv -n Media MediaTmp
+  mv -n Media /data/MediaTmp
   rm -rf /home/agentdvr/AgentDVR/Media
   ln -s /data/Media/
   mv -n MediaTmp ./Media
