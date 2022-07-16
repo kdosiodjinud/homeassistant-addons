@@ -30,3 +30,5 @@ echo "Link data to persist in hassio"
   chown -R agentdvr:agentdvr /data/XML
   chown -R agentdvr:agentdvr /data/Commands
   chown -R agentdvr:agentdvr /data/Media
+
+  exit 0;
