@@ -1,4 +1,4 @@
-FROM kdosiodjinud/homeassistant-agent-dvr:amd64_1.0.12
+FROM kdosiodjinud/homeassistant-agent-dvr:amd64_1.0.13
 
 ENV LANG C.UTF-8
 
@@ -17,7 +17,7 @@ LABEL \
     org.label-schema.description="Agent DVR integration" \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="homeassistant-agent-dvr" \
-    org.label-schema.schema-version="5.7" \
+    org.label-schema.schema-version="5.8" \
     org.label-schema.url="https://github.com/kdosiodjinud/homeassistant-agent-dvr/homeassistant-agent-dvr" \
     org.label-schema.usage="https://github.com/kdosiodjinud/homeassistant-agent-dvr/homeassistant-agent-dvr/README.md" \
     org.label-schema.vcs-ref=${BUILD_REF} \
@@ -25,6 +25,8 @@ LABEL \
     org.label-schema.vendor="Community Hass.io Addons"
 
 WORKDIR /data
+
+RUN chmod a+x ./links.sh && ./links.sh
 
 COPY run.sh /
 
