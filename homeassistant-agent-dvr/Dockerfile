@@ -1,4 +1,4 @@
-FROM kdosiodjinud/homeassistant-agent-dvr:amd64_1.0.8
+FROM kdosiodjinud/homeassistant-agent-dvr:amd64_1.0.9
 
 ENV LANG C.UTF-8
 
