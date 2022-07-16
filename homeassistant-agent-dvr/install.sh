@@ -63,10 +63,9 @@ echo "Install AgentDVR"
 	rm AgentDVR.zip
 
 echo "Install Dotnet"
-  ABSOLUTE_PATH=~
   cd /home/agentdvr
 	echo -n "Install dotnet 3.1.300 for Agent"
-  curl -s -L "https://dot.net/v1/dotnet-install.sh" | bash -s -- --version "3.1.300" --install-dir "$ABSOLUTE_PATH/AgentDVR/.dotnet"
+  curl -s -L "https://dot.net/v1/dotnet-install.sh" | bash -s -- --version "3.1.300" --install-dir "/home/agentdvr/AgentDVR/.dotnet"
 
 echo "Link data to persist in hassio"
   chmod -R 777 /home/agentdvr
@@ -80,6 +79,7 @@ echo "Link data to persist in hassio"
   mv Commands /data/Commands
   ln -s /data/Commands/
 
+  rm /home/agentdvr/AgentDVR/Media
   mkdir -p /data/Media
   ln -s /data/Media/
 
