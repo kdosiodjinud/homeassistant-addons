@@ -5,18 +5,18 @@ echo "Link data to persist in hassio"
 
   mkdir -p /data/XML
   mv XML /data/XML
+  rm -rf /home/agentdvr/AgentDVR/XML
   ln -s /data/XML/
-  cd ..
 
   mkdir -p /data/Commands
   mv Commands /data/Commands
+  rm -rf /home/agentdvr/AgentDVR/Commands
   ln -s /data/Commands/
-  cd ..
 
   mkdir -p /data/Media
   mv Media /data/Media
+  rm -rf /home/agentdvr/AgentDVR/Media
   ln -s /data/Media/
-  cd ..
 
   chmod -R 777 /home/agentdvr
   chmod -R 777 /data/XML

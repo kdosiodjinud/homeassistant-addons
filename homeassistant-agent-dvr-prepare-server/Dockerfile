@@ -10,7 +10,7 @@ COPY links.sh ./links.sh
 
 RUN chmod a+x ./createUser.sh && ./createUser.sh
 RUN chmod a+x ./tools.sh && ./tools.sh
-RUN chmod a+x ./openCv.sh && ./openCV.sh
+RUN chmod a+x ./openCv.sh && ./openCv.sh
 RUN chmod a+x ./agentDVR.sh && ./agentDVR.sh
 RUN chmod a+x ./dotNet.sh && ./dotNet.sh
 RUN chmod a+x ./links.sh && ./links.sh
