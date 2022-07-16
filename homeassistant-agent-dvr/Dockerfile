@@ -1,6 +1,4 @@
-FROM kdosiodjinud/homeassistant-agent-dvr:amd64_1.0.7
-#FROM ghcr.io/hassio-addons/debian-base/amd64:d33377b
-#FROM ghcr.io/hassio-addons/debian-base/armv7:5.2.2
+FROM kdosiodjinud/homeassistant-agent-dvr:amd64_1.0.8
 
 ENV LANG C.UTF-8
 
@@ -19,15 +17,12 @@ LABEL \
     org.label-schema.description="Agent DVR integration" \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="homeassistant-agent-dvr" \
-    org.label-schema.schema-version="5.2" \
+    org.label-schema.schema-version="5.3" \
     org.label-schema.url="https://github.com/kdosiodjinud/homeassistant-agent-dvr/homeassistant-agent-dvr" \
     org.label-schema.usage="https://github.com/kdosiodjinud/homeassistant-agent-dvr/homeassistant-agent-dvr/README.md" \
     org.label-schema.vcs-ref=${BUILD_REF} \
     org.label-schema.vcs-url="https://github.com/kdosiodjinud/homeassistant-agent-dvr" \
     org.label-schema.vendor="Community Hass.io Addons"
-
-#COPY install.sh ./install.sh
-#RUN chmod a+x ./install.sh && ./install.sh
 
 WORKDIR /data
 

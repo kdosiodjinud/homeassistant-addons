@@ -68,9 +68,6 @@ echo "Install Dotnet"
   curl -s -L "https://dot.net/v1/dotnet-install.sh" | bash -s -- --version "3.1.300" --install-dir "/home/agentdvr/AgentDVR/.dotnet"
 
 echo "Link data to persist in hassio"
-  chmod -R 777 /home/agentdvr
-  chown -R agentdvr:agentdvr /home/agentdvr
-
   cd /home/agentdvr/AgentDVR
 
   mv XML /data/XML
@@ -79,8 +76,17 @@ echo "Link data to persist in hassio"
   mv Commands /data/Commands
   ln -s /data/Commands/
 
-  rm /home/agentdvr/AgentDVR/Media
   mkdir -p /data/Media
   ln -s /data/Media/
+
+  chmod -R 777 /home/agentdvr
+  chmod -R 777 /data/XML
+  chmod -R 777 /data/Commands
+  chmod -R 777 /data/Media
+
+  chown -R agentdvr:agentdvr /home/agentdvr
+  chown -R agentdvr:agentdvr /data/XML
+  chown -R agentdvr:agentdvr /data/Commands
+  chown -R agentdvr:agentdvr /data/Media
 
 exit
