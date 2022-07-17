@@ -7,6 +7,8 @@ COPY openCv.sh ./openCv.sh
 COPY agentDVR.sh ./agentDVR.sh
 COPY dotNet.sh ./dotNet.sh
 
+COPY links.sh ./links.sh
+
 RUN chmod a+x ./createUser.sh && ./createUser.sh
 RUN chmod a+x ./tools.sh && ./tools.sh
 RUN chmod a+x ./openCv.sh && ./openCv.sh
