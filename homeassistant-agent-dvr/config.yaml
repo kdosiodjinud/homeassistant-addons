@@ -1,6 +1,6 @@
 ---
 name: Agent DVR
-version: 7.7
+version: 7.8
 slug: agent_dvr
 description: AgentDVR server
 url: https://github.com/kdosiodjinud/homeassistant-agent-dvr
