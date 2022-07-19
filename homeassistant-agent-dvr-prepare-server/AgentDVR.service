@@ -1,0 +1,16 @@
+[Unit]
+Description=AgentDVR
+
+[Service]
+WorkingDirectory=/home/agentdvr/AgentDVR
+ExecStart=/home/agentdvr/AgentDVR/start_agent.sh
+
+SyslogIdentifier=AgentDVR
+
+User=agentdvr
+
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

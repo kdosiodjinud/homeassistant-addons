@@ -6,5 +6,6 @@ su agentdvr
 for (( ; ; ))
 do
    echo "Container with Agent DVR!"
-   sleep 30
+   echo whoami
+   sleep 60
 done
