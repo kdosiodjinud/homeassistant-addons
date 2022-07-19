@@ -30,7 +30,9 @@ echo "Link data to persist in hassio"
   cd /home/agentdvr/AgentDVR && ln -s /data/Commands/
 
   chmod -R 777 /data/
+  chmod -R 777 /home/agentdvr/AgentDVR/
   chown -R agentdvr:agentdvr /data/
+  chown -R agentdvr:agentdvr /home/agentdvr/AgentDVR/
 
 echo "Run AgentDVR with persisted configuration"
 runuser -l agentdvr -c '/home/agentdvr/AgentDVR/.dotnet/dotnet /home/agentdvr/AgentDVR/Agent.dll'
