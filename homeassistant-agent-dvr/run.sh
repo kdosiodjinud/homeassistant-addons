@@ -10,7 +10,6 @@ echo "Link data to persist in hassio"
 
   if [ ! -d "/data/XML" ]
   then
-    mkdir -p /data/XML
     cp -R XML /data/
   fi
   rm -rf XML
@@ -18,7 +17,6 @@ echo "Link data to persist in hassio"
 
   if [ ! -d "/data/Commands" ]
   then
-    mkdir -p /data/Commands
     cp -R Commands /data/
   fi
   rm -rf Commands
@@ -26,7 +24,6 @@ echo "Link data to persist in hassio"
 
   if [ ! -d "/data/Media" ]
   then
-    mkdir -p /data/Media
     cp -R Media /data/
   fi
   rm -rf Media
