@@ -1,4 +1,8 @@
-#!/bin/sh
+#!/bin/bash
+
+su agentdvr
+echo "Create configs"
+/home/agentdvr/AgentDVR/.dotnet/dotnet /home/agentdvr/AgentDVR/Agent.dll & sleep 10 && kill "$!"
 
 echo "Link data to persist in hassio"
   cd /home/agentdvr/AgentDVR
@@ -14,11 +18,5 @@ echo "Link data to persist in hassio"
   mkdir -p /data/Media
   rm -rf Media
   ln -s /data/Media/
-
-
-  chmod -R 777 /data/
-  chown -R agentdvr:agentdvr /data/
-  chmod -R 777 /home/agentdvr
-  chown -R agentdvr:agentdvr /home/agentdvr
 
   exit 0;

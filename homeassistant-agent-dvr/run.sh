@@ -1,11 +1,12 @@
 #!/bin/bash
 
 su agentdvr
-#/home/agentdvr/AgentDVR/.dotnet/dotnet /home/agentdvr/AgentDVR/Agent.dll
+echo "Run AgentDVR with persisted configuration"
+/home/agentdvr/AgentDVR/.dotnet/dotnet /home/agentdvr/AgentDVR/Agent.dll
 
 for (( ; ; ))
 do
    echo "Container with Agent DVR!"
-   echo whoami
+  whoami
    sleep 60
 done
