@@ -5,22 +5,17 @@ runuser -l agentdvr -c '/home/agentdvr/AgentDVR/.dotnet/dotnet /home/agentdvr/Ag
 
 sleep 10
 
+ls -la /home/agentdvr/AgentDVR
+
 echo "Link data to persist in hassio"
   cd /home/agentdvr/AgentDVR
 
-  if [ ! -d "/data/Media" ]
+  if [ ! -d "/data/Media/" ]
   then
     cp -R /home/agentdvr/AgentDVR/Media /data/
   fi
   rm -rf /home/agentdvr/AgentDVR/Media
   cd /home/agentdvr/AgentDVR && ln -s /data/Media/
-
-  if [ ! -d "/data/XML" ]
-  then
-    cp -R /home/agentdvr/AgentDVR/XML /data/
-  fi
-  rm -rf /home/agentdvr/AgentDVR/XML
-  cd /home/agentdvr/AgentDVR && ln -s /data/XML/
 
   if [ ! -d "/data/Commands" ]
   then
