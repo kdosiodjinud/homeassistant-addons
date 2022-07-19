@@ -8,25 +8,12 @@ sleep 10
 echo "Link data to persist in hassio"
   cd /home/agentdvr/AgentDVR
 
-  if [ ! -d "/data/XML" ]
-  then
-    cp -R /home/agentdvr/AgentDVR/XML /data/
-  fi
-  rm -rf /home/agentdvr/AgentDVR/XML
-  cd /home/agentdvr/AgentDVR && ln -s /data/XML/
-
-  if [ ! -d "/data/Commands" ]
-  then
-    cp -R /home/agentdvr/AgentDVR/Commands /data/
-  fi
-  rm -rf /home/agentdvr/AgentDVR/Commands
-  cd /home/agentdvr/AgentDVR && ln -s /data/Commands/
 
   if [ ! -d "/data/Media" ]
   then
     cp -R /home/agentdvr/AgentDVR/Media /data/
   fi
-  rm -rf /home/agentdvr/AgentDVR/Media
+  mv /home/agentdvr/AgentDVR/Media /home/agentdvr/AgentDVR/Media-original
   cd /home/agentdvr/AgentDVR && ln -s /data/Media/
 
   chmod -R 777 /data/
