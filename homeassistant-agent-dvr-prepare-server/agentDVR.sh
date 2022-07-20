@@ -1,6 +1,5 @@
 #!/bin/sh
 
-su agentdvr
 echo "Install AgentDVR"
   cd /home/agentdvr
   mkdir AgentDVR
