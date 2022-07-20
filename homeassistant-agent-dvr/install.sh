@@ -2,7 +2,6 @@
 
 echo "Create user"
  adduser --disabled-password --gecos "" agentdvr
- agentdvr ALL = NOPASSWD : /usr/bin/apt-get , /usr/bin/aptitude , make , ldconfig
  su agentdvr
 
 echo "installing build tools"
@@ -69,17 +68,5 @@ echo "Install Dotnet"
   cd ~
 	echo -n "Install dotnet 3.1.300 for Agent"
   curl -s -L "https://dot.net/v1/dotnet-install.sh" | bash -s -- --version "3.1.300" --install-dir "$ABSOLUTE_PATH/AgentDVR/.dotnet"
-
-echo "Link data to persist in hassio"
-  cd ~/AgentDVR
-
-  mv XML /data/XML
-  ln -s /data/XML/
-
-  mv Commands /data/Commands
-  ln -s /data/Commands/
-
-  mkdir -p /data/Media
-  ln -s /data/Media/
 
 exit
