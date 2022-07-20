@@ -1,7 +1,16 @@
 #!/bin/bash
 
+echo "Link configs"
+mkdir -p /data/Media
+mkdir -p /data/XML
+mkdir -p /data/Commands
+cd /AgentDVR/
+ln -s /data/Media
+ln -s /data/XML
+ln -s /data/Commands
+
 echo "Start AgentDVR"
-/home/agentdvr/AgentDVR/.dotnet/dotnet /home/agentdvr/AgentDVR/Agent.dll
+/AgentDVR/.dotnet/dotnet /AgentDVR/Agent.dll
 
 for (( ; ; ))
 do
