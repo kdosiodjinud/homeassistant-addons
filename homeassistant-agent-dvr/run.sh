@@ -9,6 +9,7 @@ ln -s /data/Media
 
 echo "- /data/XML"
 if [ ! -d "/data/XML" ]
+then
   echo "-- moving original"
   mv /AgentDVR/XML /data/
 else
@@ -19,6 +20,7 @@ ln -s /data/XML
 
 echo "- /data/Commands"
 if [ ! -d "/data/Commands" ]
+then
   echo "-- moving original"
   mv /AgentDVR/Commands /data/
 else
