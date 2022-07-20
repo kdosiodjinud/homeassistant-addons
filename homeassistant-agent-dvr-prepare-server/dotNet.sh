@@ -1,5 +1,6 @@
 #!/bin/sh
 
+su agentdvr
 echo "Install Dotnet"
   cd /home/agentdvr
 	echo -n "Install dotnet 3.1.300 for Agent"

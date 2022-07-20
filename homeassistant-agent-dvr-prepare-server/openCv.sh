@@ -1,5 +1,6 @@
 #!/bin/sh
 
+su agentdvr
 echo "Install OpenCV"
   cd /home/agentdvr
   wget -O opencv.zip https://github.com/opencv/opencv/archive/4.5.4.zip
