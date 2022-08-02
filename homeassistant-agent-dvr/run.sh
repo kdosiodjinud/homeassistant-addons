@@ -32,8 +32,9 @@ ln -s /data/Commands
 echo "Start AgentDVR"
 /AgentDVR/.dotnet/dotnet /AgentDVR/Agent.dll
 
+echo "Agent DVR failed!"
+
 for (( ; ; ))
 do
-   echo "Agent DVR failed!"
    sleep 60
 done
