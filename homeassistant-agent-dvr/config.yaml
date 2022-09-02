@@ -1,6 +1,6 @@
 ---
 name: Agent DVR
-version: 9.3
+version: 9.4
 slug: agent_dvr
 description: AgentDVR server
 url: https://github.com/kdosiodjinud/homeassistant-agent-dvr
@@ -19,3 +19,6 @@ arch:
 ports:
   8090/tcp: 8090
 watchdog: http://[HOST]:8090/logs.html
+backup_exclude:
+  - /AgentDVR/Media/WebServerRoot/Media/
+  - /data/Media/WebServerRoot/Media/
