@@ -11,6 +11,7 @@ else
   echo "-- use persisted"
   rm -rf /agent/Media/XML/
 fi
+mkdir -p /agent/Media
 cd /agent/Media/
 ln -s /data/XML
 
@@ -23,6 +24,7 @@ else
   echo "-- use persisted"
   rm -rf /agent/Media/WebServerRoot/Media/
 fi
+mkdir -p /agent/Media/WebServerRoot
 cd /agent/Media/WebServerRoot/
 ln -s /data/Media
 
@@ -35,10 +37,12 @@ else
   echo "-- use persisted"
   rm -rf /agent/Commands/
 fi
+mkdir -p /data/Commands
 cd /agent/
 ln -s /data/Commands
 
 echo "Start AgentDVR"
+/agent/Agent
 
 for (( ; ; ))
 do
