@@ -25,7 +25,7 @@ else
   echo "-- use persisted"
   rm -rf /agent/Media/WebServerRoot/Media/
 fi
-cd /agent/Media/WebServerRoot/
+mkdir -p /agent/Media/WebServerRoot/
 ln -s /data/Media
 
 echo "- /agent/Commands/"

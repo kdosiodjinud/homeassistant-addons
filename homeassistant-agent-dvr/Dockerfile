@@ -17,7 +17,7 @@ LABEL \
     org.label-schema.description="Agent DVR integration" \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="homeassistant-agent-dvr" \
-    org.label-schema.schema-version="10.6" \
+    org.label-schema.schema-version="10.7" \
     org.label-schema.url="https://github.com/kdosiodjinud/homeassistant-agent-dvr/homeassistant-agent-dvr" \
     org.label-schema.usage="https://github.com/kdosiodjinud/homeassistant-agent-dvr/homeassistant-agent-dvr/README.md" \
     org.label-schema.vcs-ref=${BUILD_REF} \
