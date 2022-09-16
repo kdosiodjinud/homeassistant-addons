@@ -2,37 +2,45 @@
 
 echo "Link configs"
 
-echo "- /data/Media"
-cd /AgentDVR/
-mkdir -p /data/Media
-ln -s /data/Media
-
-echo "- /data/XML"
+cd /agent/Media/
+echo "- /agent/Media/XML/"
 if [ ! -d "/data/XML" ]
 then
   echo "-- moving original"
-  mv /AgentDVR/XML /data/
+  mv /agent/Media/XML/ /data/XML/
 else
   echo "-- use persisted"
-  rm -rf /AgentDVR/XML
+  rm -rf /agent/Media/XML/
 fi
 ln -s /data/XML
 
-echo "- /data/Commands"
+cd /agent/Media/WebServerRoot/
+echo "- /agent/Media/WebServerRoot/Media"
+if [ ! -d "/data/Media" ]
+then
+  echo "-- moving original"
+  mv /agent/Media/WebServerRoot/ /data/Media/
+else
+  echo "-- use persisted"
+  rm -rf /agent/Media/WebServerRoot/Media/
+fi
+ln -s /data/Media
+
+cd /agent/
+echo "- /agent/Commands/"
 if [ ! -d "/data/Commands" ]
 then
   echo "-- moving original"
-  mv /AgentDVR/Commands /data/
+  mv /agent/Commands/ /data/Commands/
 else
   echo "-- use persisted"
-  rm -rf /AgentDVR/Commands
+  rm -rf /agent/Commands/
 fi
 ln -s /data/Commands
 
 echo "Start AgentDVR"
-/AgentDVR/.dotnet/dotnet /AgentDVR/Agent.dll
 
-echo "Agent DVR failed!"
+/agent/Agent
 
 for (( ; ; ))
 do
