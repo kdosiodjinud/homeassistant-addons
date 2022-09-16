@@ -40,8 +40,6 @@ ln -s /data/Commands
 
 echo "Start AgentDVR"
 
-/agent/Agent
-
 for (( ; ; ))
 do
    sleep 60
