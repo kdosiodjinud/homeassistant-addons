@@ -71,9 +71,3 @@ EXPOSE 3478/udp
 
 # TURN server UDP port range
 EXPOSE 50000-50010/udp
-
-# Data volumes
-VOLUME ["/agent/Media/XML", "/agent/Media/WebServerRoot/Media", "/agent/Commands"]
-
-# Define service entrypoint
-CMD ["/agent/Agent"]
