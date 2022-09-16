@@ -2,7 +2,6 @@
 
 echo "Link configs"
 
-cd /agent/Media/
 echo "- /agent/Media/XML/"
 if [ ! -d "/data/XML" ]
 then
@@ -12,9 +11,9 @@ else
   echo "-- use persisted"
   rm -rf /agent/Media/XML/
 fi
+cd /agent/Media/
 ln -s /data/XML
 
-cd /agent/Media/WebServerRoot/
 echo "- /agent/Media/WebServerRoot/Media"
 if [ ! -d "/data/Media" ]
 then
@@ -24,9 +23,9 @@ else
   echo "-- use persisted"
   rm -rf /agent/Media/WebServerRoot/Media/
 fi
+cd /agent/Media/WebServerRoot/
 ln -s /data/Media
 
-cd /agent/
 echo "- /agent/Commands/"
 if [ ! -d "/data/Commands" ]
 then
@@ -36,6 +35,7 @@ else
   echo "-- use persisted"
   rm -rf /agent/Commands/
 fi
+cd /agent/
 ln -s /data/Commands
 
 echo "Start AgentDVR"
