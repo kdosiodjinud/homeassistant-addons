@@ -1,7 +1,8 @@
 #!/bin/bash
 
 echo "Start Sense AI"
-/agent/Agent
+
+./CodeProject.AI.Server
 
 for (( ; ; ))
 do
