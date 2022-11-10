@@ -1,0 +1,21 @@
+---
+name: SenseAI
+version: 10.7
+slug: sense_ai
+description: SenseAI
+url: https://github.com/kdosiodjinud/homeassistant-agent-dvr
+codenotary: kdosiodjinud@gmail.com
+startup: system
+ingress: true
+ingress_port: 32168
+ingress_stream: true
+host_network: true
+panel_icon: mdi:camera
+panel_title: Kamery
+panel_admin: false
+init: false
+arch:
+  - amd64
+ports:
+  8090/tcp: 32168
+watchdog: http://[HOST]:32168
