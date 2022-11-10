@@ -17,7 +17,7 @@ LABEL \
     org.label-schema.description="Sense AI integration" \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="homeassistant-sense-ai" \
-    org.label-schema.schema-version="0.1" \
+    org.label-schema.schema-version="0.2" \
     org.label-schema.url="https://github.com/kdosiodjinud/homeassistant-agent-dvr/homeassistant-sense-ai" \
     org.label-schema.usage="https://github.com/kdosiodjinud/homeassistant-agent-dvr/homeassistant-sense-ai/README.md" \
     org.label-schema.vcs-ref=${BUILD_REF} \

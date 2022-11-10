@@ -1,6 +1,6 @@
 ---
 name: SenseAI
-version: 0.1
+version: 0.2
 slug: sense_ai
 description: SenseAI
 url: https://github.com/kdosiodjinud/homeassistant-agent-dvr
@@ -17,5 +17,5 @@ init: false
 arch:
   - amd64
 ports:
-  8090/tcp: 32168
+  32168/tcp: 32168
 watchdog: http://[HOST]:32168
