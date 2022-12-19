@@ -1,4 +1,4 @@
-FROM kdosiodjinud/homeassistant-agent-dvr:amd64_2.0.1
+FROM doitandbedone/ispyagentdvr:vlc
 
 ENV LANG C.UTF-8
 
@@ -17,12 +17,16 @@ LABEL \
     org.label-schema.description="Agent DVR integration" \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="homeassistant-agent-dvr" \
-    org.label-schema.schema-version="10.7" \
+    org.label-schema.schema-version="11.7" \
     org.label-schema.url="https://github.com/kdosiodjinud/homeassistant-agent-dvr/homeassistant-agent-dvr" \
     org.label-schema.usage="https://github.com/kdosiodjinud/homeassistant-agent-dvr/homeassistant-agent-dvr/README.md" \
     org.label-schema.vcs-ref=${BUILD_REF} \
     org.label-schema.vcs-url="https://github.com/kdosiodjinud/homeassistant-agent-dvr" \
     org.label-schema.vendor="Community Hass.io Addons"
+
+EXPOSE 8090
+EXPOSE 3478/udp
+EXPOSE 50000-50010/udp
 
 WORKDIR /data
 
