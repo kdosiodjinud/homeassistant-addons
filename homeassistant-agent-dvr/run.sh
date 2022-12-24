@@ -2,7 +2,7 @@
 
 echo "Kill original process"
 PROCESS_PID=$(pgrep -u root Agent)
-kill PROCESS_PID
+kill "$PROCESS_PID"
 
 echo "Link configs"
 
