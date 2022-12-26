@@ -41,4 +41,6 @@ fi
 cd /agent/
 ln -s /data/Commands
 
+/agent/Agent
+
 exit 0
