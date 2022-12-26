@@ -1,4 +1,4 @@
-FROM kdosiodjinud/ispyagentdvr:latest
+FROM kdosiodjinud/ispyagentdvr:0.0.1
 
 ENV LANG C.UTF-8
 
