@@ -1,13 +1,12 @@
 ---
 name: SenseAI
-version: 0.4
+version: 0.5
 slug: sense_ai
 description: SenseAI
 url: https://github.com/kdosiodjinud/homeassistant-integrations/homeassistant-sense-ai
 codenotary: kdosiodjinud@gmail.com
 startup: system
 ingress: true
-ingress_port: 32168
 ingress_stream: true
 host_network: true
 panel_icon: mdi:dharmachakra
