@@ -17,15 +17,11 @@ LABEL \
     org.label-schema.description="Sense AI integration" \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="homeassistant-sense-ai" \
-    org.label-schema.schema-version="0.3" \
+    org.label-schema.schema-version="0.4" \
     org.label-schema.url="https://github.com/kdosiodjinud/homeassistant-agent-dvr/homeassistant-sense-ai" \
     org.label-schema.usage="https://github.com/kdosiodjinud/homeassistant-agent-dvr/homeassistant-sense-ai/README.md" \
     org.label-schema.vcs-ref=${BUILD_REF} \
-    org.label-schema.vcs-url="https://github.com/kdosiodjinud/homeassistant-agent-dvr" \
+    org.label-schema.vcs-url="https://github.com/kdosiodjinud/homeassistant-sense-ai" \
     org.label-schema.vendor="Community Hass.io Addons"
 
-COPY run.sh /
-
-RUN chmod a+x /run.sh
-
-CMD [ "/run.sh" ]
+CMD [ "./CodeProject.AI.Server" ]
