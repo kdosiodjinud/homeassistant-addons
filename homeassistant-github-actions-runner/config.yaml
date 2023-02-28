@@ -1,0 +1,24 @@
+---
+name: GitHub Actions runner
+version: 0.1.0
+slug: github_actions_runner
+description: Runner for GitHub Actions
+url: https://github.com/kdosiodjinud/homeassistant-integrations/homeassistant-github-actions-runner
+codenotary: kdosiodjinud@gmail.com
+startup: system
+init: false
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+options:
+  runners: []
+schema:
+  runners:
+    - url: str
+      token: str
+      name: str
+      labels: str
+

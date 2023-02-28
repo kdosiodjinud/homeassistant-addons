@@ -1,0 +1,6 @@
+---
+configuration:
+  runners:
+    name: Runners
+    description: >-
+      A list of runners settings.
