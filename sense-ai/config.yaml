@@ -3,7 +3,7 @@ name: SenseAI
 version: 0.5
 slug: sense_ai
 description: SenseAI
-url: https://github.com/kdosiodjinud/homeassistant-integrations/homeassistant-sense-ai
+url: https://github.com/kdosiodjinud/homeassistant-addons/sense-ai
 codenotary: kdosiodjinud@gmail.com
 startup: system
 ingress: true

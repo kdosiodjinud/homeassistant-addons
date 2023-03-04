@@ -17,10 +17,10 @@ LABEL \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="evolveo-detective-d04" \
     org.label-schema.schema-version="1.1" \
-    org.label-schema.url="https://github.com/kdosiodjinud/evolveo-detective-d04/evolveo-detective-d04" \
-    org.label-schema.usage="https://github.com/kdosiodjinud/evolveo-detective-d04/evolveo-detective-d04/README.md" \
+    org.label-schema.url="https://github.com/kdosiodjinud/homeassistant-addons/evolveo-detective-d04" \
+    org.label-schema.usage="https://github.com/kdosiodjinud/homeassistant-addons/evolveo-detective-d04/README.md" \
     org.label-schema.vcs-ref=${BUILD_REF} \
-    org.label-schema.vcs-url="https://github.com/kdosiodjinud/evolveo-detective-d04" \
+    org.label-schema.vcs-url="https://github.com/kdosiodjinud/homeassistant-addons/evolveo-detective-d04" \
     org.label-schema.vendor="Community Hass.io Addons"
 
 ENV LANG C.UTF-8

@@ -12,15 +12,15 @@ Install this addon to hassio:
 
 ## Step 1 - Get runner token
 1) Go to your github repo settings
-   ![Go to your github repo settings](https://github.com/kdosiodjinud/homeassistant-integrations/raw/master/homeassistant-github-actions-runner/doc/click-settings.png)
+   ![Go to your github repo settings](https://github.com/kdosiodjinud/homeassistant-addons/raw/master/github-actions-runner/doc/click-settings.png)
 2) Select "Actions" -> "Runners"
-   ![Select "Actions" -> "Runners"](https://github.com/kdosiodjinud/homeassistant-integrations/raw/master/homeassistant-github-actions-runner/doc/click-runners.png)
+   ![Select "Actions" -> "Runners"](https://github.com/kdosiodjinud/homeassistant-addons/raw/master/github-actions-runner/doc/click-runners.png)
 3) Create new self-hosted runner
-   ![Create new self-hosted runner](https://github.com/kdosiodjinud/homeassistant-integrations/raw/master/homeassistant-github-actions-runner/doc/click-new-runner.png)
+   ![Create new self-hosted runner](https://github.com/kdosiodjinud/homeassistant-addons/raw/master/github-actions-runner/doc/click-new-runner.png)
 4) Select your hassio architecture
-   ![Select your hassio architecture](https://github.com/kdosiodjinud/homeassistant-integrations/raw/master/homeassistant-github-actions-runner/doc/select-runner-settings.png)
+   ![Select your hassio architecture](https://github.com/kdosiodjinud/homeassistant-addons/raw/master/github-actions-runner/doc/select-runner-settings.png)
 5) Copy token
-   ![Copy token](https://github.com/kdosiodjinud/homeassistant-integrations/raw/master/homeassistant-github-actions-runner/doc/pick-settings.png)
+   ![Copy token](https://github.com/kdosiodjinud/homeassistant-addons/raw/master/github-actions-runner/doc/pick-settings.png)
 
 ## Step 2
 1) Go to addon settings
@@ -41,9 +41,9 @@ Install this addon to hassio:
   labels: runner,second
 ```
 When you start addon, log print status informations:
-    ![Copy token](https://github.com/kdosiodjinud/homeassistant-integrations/raw/master/homeassistant-github-actions-runner/doc/running-runner.png)
+    ![Copy token](https://github.com/kdosiodjinud/homeassistant-addons/raw/master/github-actions-runner/doc/running-runner.png)
 If all is ok, you can show live runners on github:
-    ![Copy token](https://github.com/kdosiodjinud/homeassistant-integrations/raw/master/homeassistant-github-actions-runner/doc/active-runners.png)
+    ![Copy token](https://github.com/kdosiodjinud/homeassistant-addons/raw/master/github-actions-runner/doc/active-runners.png)
 
 ### Tips:
 - for efective parallel job in GitHub actions you need more runners

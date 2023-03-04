@@ -3,7 +3,7 @@ name: GitHub Actions runner
 version: 0.1.0
 slug: github_actions_runner
 description: Runner for GitHub Actions
-url: https://github.com/kdosiodjinud/homeassistant-integrations/homeassistant-github-actions-runner
+url: https://github.com/kdosiodjinud/homeassistant-addons/github-actions-runner
 codenotary: kdosiodjinud@gmail.com
 startup: system
 init: false

@@ -1,7 +1,7 @@
 {
   "name": "Evolveo Detective D04",
   "version": "1.1",
-  "url": "https://github.com/kdosiodjinud/evolveo-detective-d04/evolveo-detective-d04",
+  "url": "https://github.com/kdosiodjinud/homeassistant-addons/evolveo-detective-d04",
   "init": false,
   "slug": "evolveo_detective_d04",
   "description": "Cameras system integration!",

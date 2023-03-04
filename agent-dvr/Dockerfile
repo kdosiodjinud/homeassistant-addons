@@ -8,7 +8,7 @@ ARG BUILD_REF
 ARG BUILD_VERSION
 
 LABEL \
-    io.hass.name="homeassistant-agent-dvr" \
+    io.hass.name="agent-dvr" \
     io.hass.description="Agent DVR integration" \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
@@ -18,10 +18,10 @@ LABEL \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="homeassistant-agent-dvr" \
     org.label-schema.schema-version="16.1" \
-    org.label-schema.url="https://github.com/kdosiodjinud/homeassistant-agent-dvr/homeassistant-agent-dvr" \
-    org.label-schema.usage="https://github.com/kdosiodjinud/homeassistant-agent-dvr/homeassistant-agent-dvr/README.md" \
+    org.label-schema.url="https://github.com/kdosiodjinud/homeassistant-addons/agent-dvr" \
+    org.label-schema.usage="https://github.com/kdosiodjinud/homeassistant-addons/agent-dvr/README.md" \
     org.label-schema.vcs-ref=${BUILD_REF} \
-    org.label-schema.vcs-url="https://github.com/kdosiodjinud/homeassistant-agent-dvr" \
+    org.label-schema.vcs-url="https://github.com/kdosiodjinud/homeassistant-addons/agent-dvr" \
     org.label-schema.vendor="Community Hass.io Addons"
 
 WORKDIR /data

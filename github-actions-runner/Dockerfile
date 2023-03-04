@@ -12,7 +12,7 @@ ARG BUILD_VERSION
 ENV BUILD_ARCH=${BUILD_ARCH}
 
 LABEL \
-    io.hass.name="homeassistant-github-actions-runner" \
+    io.hass.name="github-actions-runner" \
     io.hass.description="GitHub Actions runner integration" \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
@@ -22,10 +22,10 @@ LABEL \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="homeassistant-github-actions-runner" \
     org.label-schema.schema-version="0.1.0" \
-    org.label-schema.url="https://github.com/kdosiodjinud/homeassistant-integration/homeassistant-github-actions-runner" \
-    org.label-schema.usage="https://github.com/kdosiodjinud/homeassistant-integration/homeassistant-github-actions-runner/README.md" \
+    org.label-schema.url="https://github.com/kdosiodjinud/homeassistant-addons/github-actions-runner" \
+    org.label-schema.usage="https://github.com/kdosiodjinud/homeassistant-addons/github-actions-runner/README.md" \
     org.label-schema.vcs-ref=${BUILD_REF} \
-    org.label-schema.vcs-url="https://github.com/kdosiodjinud/homeassistant-integration/homeassistant-github-actions-runner" \
+    org.label-schema.vcs-url="https://github.com/kdosiodjinud/homeassistant-addons/github-actions-runner" \
     org.label-schema.vendor="KdoSiOdJinud Hass.io Addons"
 
 RUN mkdir -p /actions-runner-tmp
