@@ -1,14 +1,14 @@
 ---
 name: Agent DVR
-version: 16.1
+version: 16.4
 slug: agent_dvr
 description: AgentDVR server
-url: https://github.com/kdosiodjinud/homeassistant-addons/agent-dvr
+url: https://github.com/kdosiodjinud/homeassistant-addons/tree/master/agent-dvr
 codenotary: kdosiodjinud@gmail.com
 startup: system
 ingress: true
 ingress_port: 8090
-ingress_stream: true
+ingress_stream: false
 host_network: true
 panel_icon: mdi:camera
 panel_title: Kamery
