@@ -96,13 +96,13 @@ ENV MALLOC_TRIM_THRESHOLD_=100000
 EXPOSE 8090
 
 # STUN server port
-EXPOSE 3478/udp
+#EXPOSE 3478/udp
 
 # TURN server UDP port range
 EXPOSE 50000-50010/udp
 
 # Data volumes
-VOLUME ["/agent/Media/XML", "/agent/Media/WebServerRoot/Media", "/agent/Commands"]
+#VOLUME ["/agent/Media/XML", "/agent/Media/WebServerRoot/Media", "/agent/Commands"]
 
 # Define service entrypoint
 CMD ["/agent/Agent"]
