@@ -1,6 +1,6 @@
 ---
 name: Agent DVR
-version: 16.5
+version: 16.6
 slug: agent_dvr
 description: AgentDVR server
 url: https://github.com/kdosiodjinud/homeassistant-addons/tree/master/agent-dvr
@@ -18,7 +18,7 @@ arch:
   - amd64
 ports:
   8090/tcp: 8090
-#  3478/udp: 3478
+  3478/udp: 3479
   50000/udp: 50000
   50001/udp: 50001
   50002/udp: 50002
