@@ -1,4 +1,5 @@
-FROM node:18-alpine
+ARG BUILD_FROM
+FROM $BUILD_FROM
 
 ENV LANG C.UTF-8
 
@@ -27,7 +28,8 @@ LABEL \
 WORKDIR /usr/src/app
 
 COPY package.json package-lock.json ./
-RUN npm install --production
+RUN npm install --production \
+    && npx playwright install --with-deps chromium
 
 COPY server.js extract.js ./
 
