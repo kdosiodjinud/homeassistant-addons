@@ -3,15 +3,7 @@
 This add-on exposes an HTTP API that accepts a `flightId` query parameter and runs
 a Playwright based extraction script. The result of the script is returned as JSON.
 
-Before using the add-on locally make sure Playwright has downloaded the browser
-binaries:
-
-```bash
-npm install
-npx playwright install
-```
-
-After that the extraction logic can also be executed manually:
+The extraction logic can also be executed manually:
 
 ```bash
 FLIGHT_ID=KLM897 npm run extract
