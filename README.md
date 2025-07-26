@@ -13,3 +13,8 @@ More: [readme.md](https://github.com/kdosiodjinud/homeassistant-addons/tree/mast
 You can create your own GitHub Action runner and use HA cpu for processing actions on GitHub.
 
 More: [readme.md](https://github.com/kdosiodjinud/homeassistant-addons/tree/master/github-actions-runner)
+
+## Flight Extractor
+Simple addon providing an API endpoint that triggers a mocked flight data extraction.
+
+More: [readme.md](https://github.com/kdosiodjinud/homeassistant-addons/tree/master/flight-extractor)
