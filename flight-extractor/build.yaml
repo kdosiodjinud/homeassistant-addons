@@ -1,6 +1,1 @@
-build_from:
-  aarch64: node:18
-  amd64: node:18
-  armhf: node:18
-  armv7: node:18
-  i386: node:18
+dockerfile: Dockerfile
