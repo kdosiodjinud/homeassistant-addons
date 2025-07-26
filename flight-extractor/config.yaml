@@ -1,6 +1,6 @@
 ---
 name: Flight Extractor
-version: 0.1.0
+version: 0.1.1
 slug: flight_extractor
 description: Mock flight data extractor
 url: https://github.com/kdosiodjinud/homeassistant-addons/flight-extractor
