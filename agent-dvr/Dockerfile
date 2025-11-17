@@ -1,4 +1,4 @@
-FROM kdosiodjinud/ispyagentdvr:0.0.2
+FROM kdosiodjinud/ispyagentdvr:0.0.3
 
 ENV LANG C.UTF-8
 
@@ -17,7 +17,7 @@ LABEL \
     org.label-schema.description="Agent DVR integration" \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="homeassistant-agent-dvr" \
-    org.label-schema.schema-version="16.7" \
+    org.label-schema.schema-version="17.1" \
     org.label-schema.url="https://github.com/kdosiodjinud/homeassistant-addons/agent-dvr" \
     org.label-schema.usage="https://github.com/kdosiodjinud/homeassistant-addons/agent-dvr/README.md" \
     org.label-schema.vcs-ref=${BUILD_REF} \
@@ -25,8 +25,6 @@ LABEL \
     org.label-schema.vendor="Community Hass.io Addons"
 
 WORKDIR /data
-
-RUN apt-get update && apt-get install -y libvlc-dev vlc libx11-dev
 
 COPY build.sh /
 RUN chmod a+x /build.sh
