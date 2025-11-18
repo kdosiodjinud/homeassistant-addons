@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Link configs"
++echo "[$(date '+%Y-%m-%d %H:%M:%S')] Link configs"
 
 echo "- /agent/Media/XML/"
 mkdir -p /agent/Media/XML
