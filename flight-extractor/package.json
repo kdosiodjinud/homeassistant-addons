@@ -6,7 +6,7 @@
     "extract": "npx playwright test src/extract.spec.js --"
   },
   "dependencies": {
-    "express": "^4.18.2",
+    "express": "^4.22.1",
     "playwright": "^1.41.2",
     "@playwright/test": "^1.41.2"
   }
